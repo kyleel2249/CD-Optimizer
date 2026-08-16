@@ -1,0 +1,39 @@
+# CD Optimizer default configuration
+
+mode: balanced
+quality: 95
+
+analysis:
+  sample_size_mb: 4
+  enable_semantic: true
+  enable_color_histogram: true
+
+pipeline:
+  max_stages: 8
+  search_attempts:
+    fast: 1
+    balanced: 3
+    ultra: 12
+  timeout_sec:
+    fast: 30
+    balanced: 120
+    ultra: 3600
+
+codecs:
+  zstd_level: 19
+  brotli_quality: 11
+  webp_quality: 90
+  avif_quality: 80
+
+security:
+  encryption: aes-256-gcm
+  kdf: argon2id
+  integrity: sha256
+
+hardware:
+  prefer_gpu: true
+  threads: auto
+  simd: true
+
+logging:
+  level: INFO
